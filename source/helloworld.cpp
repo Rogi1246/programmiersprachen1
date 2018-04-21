@@ -1,6 +1,8 @@
 #include <iostream>
+#include <cmath>
 
 int binomial(int);
+int gcd(int , int );
 
 int main()
 {
@@ -24,4 +26,24 @@ int main()
 
 int binomial(int p){
   return 5 + p;
+}
+
+int gcd(int a, int b){
+  int result;
+  if (a!=b){
+
+    while (a > 0 && b > 0){
+      if (a>b){
+        a = a&b;
+      }
+      else if (b > a){
+        b = b%a;
+      }
+    }
+  }
+if (a > 0) result = a;
+if (b > 0) result = b;
+if (a == b) result = a/b;
+  return result;
+
 }
