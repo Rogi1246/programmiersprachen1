@@ -30,11 +30,26 @@ int binomial(int p){
   return 5 + p;
 }
 
-int gcd ( int a , int b )
-  {
-    if(b == 0)
-        return a;
-    else return gcd(b, a % b);
-  }
+int gcd(int a, int b){
+  int result;
+  if (a!=b){
 
-int checksum(int m){}}
+    while (a > 0 && b > 0){
+      if (a>b){
+        a = a&b;
+      }
+      else if (b > a){
+        b = b%a;
+      }
+    }
+  }
+if (a > 0) result = a;
+if (b > 0) result = b;
+if (a == b) result = a/b;
+  return result;
+
+}
+
+int checksum(int m){
+  
+}
