@@ -4,6 +4,7 @@
 int binomial(int);
 int gcd(int a, int b);
 int checksum(int);
+int sumMultiples();
 
 int main()
 {
@@ -51,5 +52,21 @@ if (a == b) result = a/b;
 }
 
 int checksum(int m){
-  
+  int sum;
+  while(m > 0) {
+    sum += m % 10;
+    m /= 10;
+  }
+  std::cout<<sum;
+  return 0;
+  }
+
+int sumMultiples(){
+  int sum;
+  for(int i = 0; i<1000; i++){
+    if(i%3 == 0 || i%5 == 0 ) {
+      sum += i;
+    }
+    std::cout<<sum;
+  }
 }
