@@ -15,10 +15,11 @@ double mileConvert();
 int main()
 {
   std::cout << "Hello, World2!\n";
-  std::cout << checksum(16) << "\n";
-  std::cout << gcd(2,20) << "\n";
+  std::cout << checksum(117380) << "\n";
+  std::cout << gcd(15,50) << "\n";
   std::cout << sumMultiples() << "\n";
   std::cout << is_prime(10) << "\n";
+  std::cout << factorial(5) << "\n";
   cout << theCylinder() << "\n";
   cout << mileConvert() << "\n";
   bool found = false;
@@ -58,7 +59,7 @@ int gcd(int a, int b){
 
     while (a > 0 && b > 0){
       if (a>b){
-        a = a&b;
+        a = a%b;
       }
       else if (b > a){
         b = b%a;
@@ -91,10 +92,9 @@ int sumMultiples(){
   for(int i = 0; i<=1000; i++){
     if(i%3 == 0 || i%5 == 0 ) {
       sum += i;
-    }
-    return sum;
-    std::cout<<sum;
+    } 
   }
+  std::cout<<sum;
 }
 
 int factorial(int f){
@@ -104,8 +104,8 @@ int factorial(int f){
   for (int i = 1; i <= f; i++){
     fac*= i;
   }
-  return fac;
-  std::cout<<"Factorial of "<< f << fac; 
+  std::cout<< endl << "Factorial of "<< f << " is " << fac << endl; 
+    return 0;
     }
   }
 
