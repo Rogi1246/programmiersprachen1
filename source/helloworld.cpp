@@ -15,11 +15,11 @@ double mileConvert();
 int main()
 {
   std::cout << "Hello, World2!\n";
-  std::cout << binomial(7,5) << "\n";
+  std::cout << binomial(8,2) << "\n";
   std::cout << checksum(117380) << "\n";
   std::cout << gcd(15,50) << "\n";
-  std::cout << sumMultiples() << "\n";
-  std::cout << is_prime(10) << "\n";
+  std::cout << sumMultiples() <<"\n";
+  std::cout << is_prime(13) << "     1 = yes ; 0 = not prime" << "\n";
   std::cout << factorial(5) << "\n";
   cout << theCylinder() << "\n";
   cout << mileConvert() << "\n";
@@ -41,8 +41,8 @@ int main()
 
 int binomial(int n, int k){
   int result = 1;
-    if ( k > n - k )
-        k = n - k;
+    if ( k > n - k ) {k = n - k;}
+        if (k > n){ return -1; }
  
     for (int i = 0; i < k; ++i)
     {
@@ -114,11 +114,11 @@ int factorial(int f){
 
   int is_prime(int toTest){
     if(toTest <= 1 || toTest % 2 == 0){
-      return 0;
+      return  0;
     }
 
     else if(toTest == 2){
-      return 1;
+      return  1;
     }
 
     for(int i = 3; i<toTest; i++){
@@ -127,8 +127,6 @@ int factorial(int f){
       }
     }
   return 1; 
-  cout<<"If 1 = number is prime, If 0 = number is not prime!";
-
     }
 
 
@@ -139,9 +137,9 @@ double theCylinder(){
  double rad; 
  double hght;
 
-cout << "Gimme dat Radius  " ;
+cout << "Enter Radius  " ;
 cin >> rad;
-cout << "And dat height  " ;
+cout << "Enter height  " ;
 cin >> hght;
 
 double rad_sq = rad*rad;
