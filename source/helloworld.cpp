@@ -6,6 +6,7 @@ int gcd(int a, int b);
 int checksum(int);
 int sumMultiples();
 int factorial(int);
+int is_prime(int);
 
 int main()
 {
@@ -13,6 +14,7 @@ int main()
   std::cout << checksum(16) << "\n";
   std::cout << gcd(2,20) << "\n";
   std::cout << sumMultiples() << "\n";
+  std::cout << is_prime(10) << "\n";
   bool found = false;
   int i = 0;
   while(!found){
@@ -101,3 +103,21 @@ int factorial(int f){
     }
   }
 
+  int is_prime(int toTest){
+    if(toTest <= 1 || toTest % 2 == 0){
+      return 0;
+    }
+
+    else if(toTest == 2){
+      return 1;
+    }
+
+    for(int i = 3; i<toTest; i++){
+      if(toTest % i == 0){
+        return 0;
+      }
+    }
+  return 1; 
+  std::cout<<"If 1 = number is prime, If 0 = number is not prime!";
+
+    }
