@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+using namespace std;
+
 
 int binomial(int n, int k);
 int gcd(int a, int b);
@@ -7,6 +9,8 @@ int checksum(int);
 int sumMultiples();
 int factorial(int);
 int is_prime(int);
+double theCylinder();
+double mileConvert();
 
 int main()
 {
@@ -15,6 +19,8 @@ int main()
   std::cout << gcd(2,20) << "\n";
   std::cout << sumMultiples() << "\n";
   std::cout << is_prime(10) << "\n";
+  cout << theCylinder() << "\n";
+  cout << mileConvert() << "\n";
   bool found = false;
   int i = 0;
   while(!found){
@@ -118,6 +124,47 @@ int factorial(int f){
       }
     }
   return 1; 
-  std::cout<<"If 1 = number is prime, If 0 = number is not prime!";
+  cout<<"If 1 = number is prime, If 0 = number is not prime!";
 
     }
+
+
+double theCylinder(){
+ double pi = acos(-1);
+ double volume = 0;
+ double sfce = 0;
+ double rad; 
+ double hght;
+
+cout << "Gimme dat Radius  " ;
+cin >> rad;
+cout << "And dat height  " ;
+cin >> hght;
+
+double rad_sq = rad*rad;
+volume = pi * rad_sq * hght;
+sfce = pi * 2 * rad*(rad + hght);
+
+cout << endl << "The voulume is " << volume << " the surface is " << sfce << endl;
+return 0;
+
+}
+
+double mileConvert(){
+  double km;
+  double miles;
+  const double KM_PER_MI = 1.6093;
+
+  cout << "Enter miles to convert "; 
+  cin >> miles;
+
+  if(miles <= 0 ) {
+    return 0; 
+    cout << "must be positive number, try again ";
+      }
+
+  else{
+    km = miles * KM_PER_MI; }
+  cout << endl << "Entered miles in kilometers are : " << km << endl;
+  return 0;
+  }
