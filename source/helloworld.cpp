@@ -1,16 +1,18 @@
 #include <iostream>
 #include <cmath>
 
-int binomial(int);
+int binomial(int n, int k);
 int gcd(int a, int b);
 int checksum(int);
 int sumMultiples();
+int factorial(int);
 
 int main()
 {
   std::cout << "Hello, World2!\n";
-  std::cout << binomial(6) << "\n";
-  std::cout << gcd(20,2) << "\n";
+  std::cout << checksum(16) << "\n";
+  std::cout << gcd(2,20) << "\n";
+  std::cout << sumMultiples() << "\n";
   bool found = false;
   int i = 0;
   while(!found){
@@ -27,9 +29,20 @@ int main()
   return 0;
 }
 
-int binomial(int p){
-  return 5 + p;
+int binomial(int n, int k){
+  int result = 1;
+    if ( k > n - k )
+        k = n - k;
+ 
+    for (int i = 0; i < k; ++i)
+    {
+        result *= (n - i);
+        result /= (i + 1);
+    }
+ 
+    return result;
 }
+
 
 int gcd(int a, int b){
   int result;
@@ -52,21 +65,39 @@ if (a == b) result = a/b;
 }
 
 int checksum(int m){
-  int sum;
-  while(m > 0) {
-    sum += m % 10;
-    m /= 10;
+  int tmpSum = 0;
+  int tmpM = m;
+
+  while(tmpM / 10 != 0){
+    tmpSum += tmpM % 10;
+    tmpM = tmpM / 10;
   }
-  std::cout<<sum;
-  return 0;
-  }
+  tmpSum += tmpM % 10;
+
+  return tmpSum;
+  std::cout<<tmpSum;
+}
 
 int sumMultiples(){
-  int sum;
-  for(int i = 0; i<1000; i++){
+  int sum = 0;
+  for(int i = 0; i<=1000; i++){
     if(i%3 == 0 || i%5 == 0 ) {
       sum += i;
     }
+    return sum;
     std::cout<<sum;
   }
 }
+
+int factorial(int f){
+  int fac = 1;
+
+  if (f > 0){
+  for (int i = 1; i <= f; i++){
+    fac*= i;
+  }
+  return fac;
+  std::cout<<"Factorial of "<< f << fac; 
+    }
+  }
+
