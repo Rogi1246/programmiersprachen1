@@ -15,6 +15,7 @@ double mileConvert();
 int main()
 {
   std::cout << "Hello, World2!\n";
+  std::cout << binomial(7,5) << "\n";
   std::cout << checksum(117380) << "\n";
   std::cout << gcd(15,50) << "\n";
   std::cout << sumMultiples() << "\n";
@@ -48,8 +49,10 @@ int binomial(int n, int k){
         result *= (n - i);
         result /= (i + 1);
     }
+
+   return result;
+std::cout << result; 
  
-    return result;
 }
 
 
