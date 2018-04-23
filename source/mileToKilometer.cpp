@@ -2,7 +2,6 @@
 #include <cmath>
 using namespace std;
 
-double mileConvert();
 int main()
 {
   
